@@ -776,6 +776,25 @@
       </div>
     </section>
 
+    <section class="panel" style="margin-bottom: 24px;">
+      <div class="panel-header">
+        <div class="panel-title">Clientes que pagaron</div>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <div class="panel-meta" id="clientes-meta">YTD</div>
+          <div class="ranking-controls" id="clientes-controls">
+            <button data-limit="10" class="active">Top 10</button>
+            <button data-limit="20">Top 20</button>
+            <button data-limit="999">Todos</button>
+          </div>
+        </div>
+      </div>
+      <div id="clientes-kpis" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;"></div>
+      <div class="rank-header" style="grid-template-columns:28px 1fr 90px 100px 90px 90px 120px;">
+        <span>#</span><span>Cliente</span><span>País</span><span>Oferta</span><span>Closer</span><span style="text-align:right;">Revenue</span><span>Cash collected</span>
+      </div>
+      <div id="clientes-list"></div>
+    </section>
+
   </div>
 
   <!-- ============ LEADS VIEW ============ -->
@@ -1257,6 +1276,67 @@
     }).join('');
   }
 
+  const PRODUCT_COLORS = {
+    'Consulting Grupal': '#22d3ee', 'Consulting 1-1': '#d946ef',
+    'Mastermind': '#f59e0b', 'Inner Circle': '#10b981'
+  };
+  const COUNTRY_FLAG_MAP = {
+    'Argentina':'🇦🇷','Uruguay':'🇺🇾','España':'🇪🇸','Chile':'🇨🇱','Colombia':'🇨🇴',
+    'EEUU':'🇺🇸','México':'🇲🇽','Perú':'🇵🇪','Ecuador':'🇪🇨','Bolivia':'🇧🇴',
+    'Costa Rica':'🇨🇷','Rep. Dominicana':'🇩🇴'
+  };
+  function renderClientes(limit) {
+    if (!DATA.clientes) return;
+    const rows = currentMonth === 'ALL' ? DATA.clientes : DATA.clientes.filter(c => c.mes === currentMonth);
+    const sorted = [...rows].sort((a,b) => b.revenue - a.revenue);
+    const totalRev = rows.reduce((s,c) => s + c.revenue, 0);
+    const totalCash = rows.reduce((s,c) => s + c.cash, 0);
+    const aov = rows.length ? totalRev / rows.length : 0;
+    const topClient = sorted[0];
+    document.getElementById('clientes-kpis').innerHTML = `
+      <div class="kpi" style="--kpi-accent:#d946ef;padding:16px 18px;">
+        <div class="label">Clientes</div><div class="value" style="font-size:26px;">${rows.length}</div>
+        <div class="sublabel">${sorted.filter(c=>c.status==='Pagado').length} pagados · ${sorted.filter(c=>c.status==='Reserva').length} reserva</div>
+      </div>
+      <div class="kpi" style="--kpi-accent:#22d3ee;padding:16px 18px;">
+        <div class="label">Revenue total</div><div class="value" style="font-size:26px;">${fmtUSD(totalRev)}</div>
+        <div class="sublabel">Contratado</div>
+      </div>
+      <div class="kpi" style="--kpi-accent:#10b981;padding:16px 18px;">
+        <div class="label">Cash collected</div><div class="value" style="font-size:26px;">${fmtUSD(totalCash)}</div>
+        <div class="sublabel">${totalRev>0?Math.round(totalCash/totalRev*100):0}% del revenue</div>
+      </div>
+      <div class="kpi" style="--kpi-accent:#f59e0b;padding:16px 18px;">
+        <div class="label">AOV</div><div class="value" style="font-size:26px;">${fmtUSD(aov)}</div>
+        <div class="sublabel">Top · ${topClient ? topClient.name.split(' ')[0]+' '+fmtUSD(topClient.revenue) : '—'}</div>
+      </div>
+    `;
+    const max = sorted.length ? sorted[0].revenue : 1;
+    document.getElementById('clientes-list').innerHTML = sorted.slice(0, limit).map((c,i) => {
+      const color = PRODUCT_COLORS[c.producto] || '#888';
+      const flag = COUNTRY_FLAG_MAP[c.pais] || '🌎';
+      const cashPct = c.revenue > 0 ? Math.round(c.cash/c.revenue*100) : 0;
+      const statusColor = c.status === 'Reserva' ? '#f59e0b' : '#10b981';
+      return `
+        <div class="rank-row" style="grid-template-columns:28px 1fr 90px 100px 90px 90px 120px;">
+          <span class="rank-num">${String(i+1).padStart(2,'0')}</span>
+          <div>
+            <div class="rank-name">${c.name}</div>
+            <div class="rank-niche" style="color:${statusColor};">${c.status} · ${c.mes}</div>
+          </div>
+          <span style="font-size:11px;color:var(--text-secondary);">${flag} ${c.pais||'—'}</span>
+          <span class="rank-tier" style="background:${color}15;color:${color};font-size:10px;padding:3px 8px;">${c.producto}</span>
+          <span style="font-size:11px;color:var(--text-secondary);font-family:var(--mono);">${c.closer}</span>
+          <span class="rank-rev">${fmtUSD(c.revenue)}</span>
+          <div>
+            <div style="font-family:var(--mono);font-size:11px;">${fmtUSD(c.cash)} <span style="color:var(--text-tertiary);">· ${cashPct}%</span></div>
+            <div class="rank-bar" style="margin-top:4px;"><div class="rank-bar-fill" style="width:${c.revenue/max*100}%;background:${color};"></div></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+    document.getElementById('clientes-meta').textContent = currentMonth === 'ALL' ? 'YTD' : currentMonth;
+  }
   function renderSalesView() {
     renderKPIs();
     renderRevenueChart();
@@ -1265,6 +1345,7 @@
     renderClosers();
     renderOfferTable();
     renderCountries();
+    renderClientes(10);
   }
   function renderLeadsView() {
     renderLeadsKPIs();
@@ -1293,11 +1374,18 @@
         renderSalesView();
       });
     });
-    document.querySelectorAll('.ranking-controls button').forEach(btn => {
+    document.querySelectorAll('#view-leads .ranking-controls button').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.ranking-controls button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('#view-leads .ranking-controls button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         renderRanking(parseInt(btn.dataset.limit, 10));
+      });
+    });
+    document.querySelectorAll('#clientes-controls button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#clientes-controls button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderClientes(parseInt(btn.dataset.limit, 10));
       });
     });
   }

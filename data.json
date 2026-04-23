@@ -3,96 +3,1714 @@
     "title": "Arcadia",
     "subtitle": "Sales intelligence",
     "period": "Enero – Abril 2026",
-    "version": "v.03"
+    "version": "v.04"
   },
   "leads": [
-    { "name": "Bernardo Caram", "ig": "Bernardo.caram", "tier": "Consultoria", "low": 65000, "high": 65000, "niche": "Amazon management" },
-    { "name": "Francisco Evangelista", "ig": "@crowdfarming.wine", "tier": "Mastermind", "low": 50000, "high": 50000, "niche": "E-commerce" },
-    { "name": "Emmmanuel", "ig": "signos.agency", "tier": "Consultoria", "low": 50000, "high": 50000, "niche": "Marketing/Agencia" },
-    { "name": "Nacho", "ig": "@elreydel110_", "tier": "VSL Funnel", "low": 50000, "high": 50000, "niche": "Motos / Financiación" },
-    { "name": "Pau", "ig": "@pau_casalta", "tier": "VSL Funnel", "low": 50000, "high": 50000, "niche": "Consultoría/Growth" },
-    { "name": "Lihuel Ledesma", "ig": "escueladenutricionemocional", "tier": "VSL Funnel", "low": 50000, "high": 50000, "niche": "Formación nutrición" },
-    { "name": "Matias Villanueva", "ig": "Matiasvillanuev", "tier": "VSL Funnel", "low": 50000, "high": 50000, "niche": "Marketing/Agencia" },
-    { "name": "Mykyta Grytsyk", "ig": "@mykytaempodera", "tier": "Mastermind", "low": 25000, "high": 50000, "niche": "Espiritualidad" },
-    { "name": "Edelweiss Kaswalder", "ig": "Fxtrading.lab", "tier": "VSL Funnel", "low": 25000, "high": 50000, "niche": "Trading" },
-    { "name": "Gastón Correa", "ig": "Soygastoncorrea", "tier": "VSL Funnel", "low": 25000, "high": 50000, "niche": "Odontología" },
-    { "name": "Leandro Sopprani", "ig": "leosopprani", "tier": "Consulting", "low": 20000, "high": 20000, "niche": "Marketing/Agencia" },
-    { "name": "Cory Avila", "ig": "Soycoryavila", "tier": "Mastermind", "low": 10000, "high": 25000, "niche": "Trading" },
-    { "name": "Javier Perez", "ig": "@javiercontent", "tier": "Consulting", "low": 10000, "high": 15000, "niche": "Growth Fitness" },
-    { "name": "Valentina Rossini", "ig": "Soyvalentinarossini", "tier": "Consulting", "low": 8000, "high": 10000, "niche": "Consultoría/Growth" },
-    { "name": "Martino Fassi", "ig": "@martinofassi_", "tier": "Consulting", "low": 6000, "high": 10000, "niche": "E-commerce" },
-    { "name": "Mario Coca Jiménez", "ig": "@mariococa_", "tier": "Consultoria", "low": 5000, "high": 10000, "niche": "Coaching" },
-    { "name": "Fabricio Rodríguez", "ig": "Fabricioh17", "tier": "Consultoria", "low": 5000, "high": 10000, "niche": "Trading" },
-    { "name": "Andros De Lopo", "ig": "@AndrosLB", "tier": "Consultoria", "low": 5000, "high": 10000, "niche": "No especificado" },
-    { "name": "Luis", "ig": "Luisla5090", "tier": "VSL Funnel", "low": 5000, "high": 10000, "niche": "No especificado" },
-    { "name": "Osneiber", "ig": "osneeal_", "tier": "VSL Funnel", "low": 5000, "high": 10000, "niche": "Growth Fitness" },
-    { "name": "Jan Grimau", "ig": "jan.grimau", "tier": "VSL Funnel", "low": 5000, "high": 10000, "niche": "Consultoría/Growth" },
-    { "name": "Antonela Nasello", "ig": "@dra.nasello.psiquiatra", "tier": "VSL Funnel", "low": 5000, "high": 10000, "niche": "Salud mental" },
-    { "name": "Damián Martínez", "ig": "@soydamianmartinez", "tier": "VSL Funnel", "low": 5000, "high": 10000, "niche": "E-commerce" },
-    { "name": "Gabriel Corrieri", "ig": "Rockermkt", "tier": "Consulting", "low": 8000, "high": 8000, "niche": "Marketing/Agencia" },
-    { "name": "Aleksandro Tavluy", "ig": "@theeexal04", "tier": "Consultoria", "low": 3000, "high": 8000, "niche": "Contenido YouTube" },
-    { "name": "Santiago Ortiz Valero", "ig": "Santiagoortizmarketing", "tier": "Consulting", "low": 5000, "high": 5000, "niche": "Marketing/Agencia" },
-    { "name": "Francisco Gonzalez Vattuone", "ig": "Fran.vattuone", "tier": "Consultoria", "low": 4800, "high": 4800, "niche": "Mentoría ecom" },
-    { "name": "Leo Opazo", "ig": "leopazo", "tier": "Mastermind", "low": 3000, "high": 5000, "niche": "No especificado" },
-    { "name": "Piero Arias", "ig": "Piero.trades", "tier": "Consultoria", "low": 3000, "high": 5000, "niche": "Trading" },
-    { "name": "Manuel Castillo", "ig": "@manuelcastillo.ceo", "tier": "Consultoria", "low": 3000, "high": 5000, "niche": "Negocios online" },
-    { "name": "Ariel Mirra", "ig": "@ariel.mirra", "tier": "Mastermind", "low": 3000, "high": 5000, "niche": "Coaching" },
-    { "name": "Pablo Silber", "ig": "@elclubdeactores", "tier": "Mastermind", "low": 3000, "high": 5000, "niche": "Actores" },
-    { "name": "Mehdi", "ig": "@mehdii.jrr", "tier": "Consultoria", "low": 2500, "high": 2500, "niche": "Growth partner" },
-    { "name": "Emiliano Villarreal", "ig": "Emivillarreale", "tier": "Consultoria", "low": 0, "high": 3000, "niche": "Funnel" },
-    { "name": "Joaquin Rodri", "ig": "Joacoenchina", "tier": "Mastermind", "low": 0, "high": 3000, "niche": "Indefinido" },
-    { "name": "Benja Núñez", "ig": "Benjanunez_", "tier": "Consultoria", "low": 0, "high": 0, "niche": "IA" },
-    { "name": "Sarah Barroso", "ig": "@cellgenic", "tier": "Consultoria", "low": 0, "high": 0, "niche": "Medicina regenerativa" },
-    { "name": "Mohit Pal Kumari", "ig": "@mohitpalkumari", "tier": "Consultoria", "low": 0, "high": 0, "niche": "Coaching" }
+    {
+      "name": "Bernardo Caram",
+      "ig": "Bernardo.caram",
+      "tier": "Consultoria",
+      "low": 65000,
+      "high": 65000,
+      "niche": "Amazon management"
+    },
+    {
+      "name": "Francisco Evangelista",
+      "ig": "@crowdfarming.wine",
+      "tier": "Mastermind",
+      "low": 50000,
+      "high": 50000,
+      "niche": "E-commerce"
+    },
+    {
+      "name": "Emmmanuel",
+      "ig": "signos.agency",
+      "tier": "Consultoria",
+      "low": 50000,
+      "high": 50000,
+      "niche": "Marketing/Agencia"
+    },
+    {
+      "name": "Nacho",
+      "ig": "@elreydel110_",
+      "tier": "VSL Funnel",
+      "low": 50000,
+      "high": 50000,
+      "niche": "Motos / Financiación"
+    },
+    {
+      "name": "Pau",
+      "ig": "@pau_casalta",
+      "tier": "VSL Funnel",
+      "low": 50000,
+      "high": 50000,
+      "niche": "Consultoría/Growth"
+    },
+    {
+      "name": "Lihuel Ledesma",
+      "ig": "escueladenutricionemocional",
+      "tier": "VSL Funnel",
+      "low": 50000,
+      "high": 50000,
+      "niche": "Formación nutrición"
+    },
+    {
+      "name": "Matias Villanueva",
+      "ig": "Matiasvillanuev",
+      "tier": "VSL Funnel",
+      "low": 50000,
+      "high": 50000,
+      "niche": "Marketing/Agencia"
+    },
+    {
+      "name": "Mykyta Grytsyk",
+      "ig": "@mykytaempodera",
+      "tier": "Mastermind",
+      "low": 25000,
+      "high": 50000,
+      "niche": "Espiritualidad"
+    },
+    {
+      "name": "Edelweiss Kaswalder",
+      "ig": "Fxtrading.lab",
+      "tier": "VSL Funnel",
+      "low": 25000,
+      "high": 50000,
+      "niche": "Trading"
+    },
+    {
+      "name": "Gastón Correa",
+      "ig": "Soygastoncorrea",
+      "tier": "VSL Funnel",
+      "low": 25000,
+      "high": 50000,
+      "niche": "Odontología"
+    },
+    {
+      "name": "Leandro Sopprani",
+      "ig": "leosopprani",
+      "tier": "Consulting",
+      "low": 20000,
+      "high": 20000,
+      "niche": "Marketing/Agencia"
+    },
+    {
+      "name": "Cory Avila",
+      "ig": "Soycoryavila",
+      "tier": "Mastermind",
+      "low": 10000,
+      "high": 25000,
+      "niche": "Trading"
+    },
+    {
+      "name": "Javier Perez",
+      "ig": "@javiercontent",
+      "tier": "Consulting",
+      "low": 10000,
+      "high": 15000,
+      "niche": "Growth Fitness"
+    },
+    {
+      "name": "Valentina Rossini",
+      "ig": "Soyvalentinarossini",
+      "tier": "Consulting",
+      "low": 8000,
+      "high": 10000,
+      "niche": "Consultoría/Growth"
+    },
+    {
+      "name": "Martino Fassi",
+      "ig": "@martinofassi_",
+      "tier": "Consulting",
+      "low": 6000,
+      "high": 10000,
+      "niche": "E-commerce"
+    },
+    {
+      "name": "Mario Coca Jiménez",
+      "ig": "@mariococa_",
+      "tier": "Consultoria",
+      "low": 5000,
+      "high": 10000,
+      "niche": "Coaching"
+    },
+    {
+      "name": "Fabricio Rodríguez",
+      "ig": "Fabricioh17",
+      "tier": "Consultoria",
+      "low": 5000,
+      "high": 10000,
+      "niche": "Trading"
+    },
+    {
+      "name": "Andros De Lopo",
+      "ig": "@AndrosLB",
+      "tier": "Consultoria",
+      "low": 5000,
+      "high": 10000,
+      "niche": "No especificado"
+    },
+    {
+      "name": "Luis",
+      "ig": "Luisla5090",
+      "tier": "VSL Funnel",
+      "low": 5000,
+      "high": 10000,
+      "niche": "No especificado"
+    },
+    {
+      "name": "Osneiber",
+      "ig": "osneeal_",
+      "tier": "VSL Funnel",
+      "low": 5000,
+      "high": 10000,
+      "niche": "Growth Fitness"
+    },
+    {
+      "name": "Jan Grimau",
+      "ig": "jan.grimau",
+      "tier": "VSL Funnel",
+      "low": 5000,
+      "high": 10000,
+      "niche": "Consultoría/Growth"
+    },
+    {
+      "name": "Antonela Nasello",
+      "ig": "@dra.nasello.psiquiatra",
+      "tier": "VSL Funnel",
+      "low": 5000,
+      "high": 10000,
+      "niche": "Salud mental"
+    },
+    {
+      "name": "Damián Martínez",
+      "ig": "@soydamianmartinez",
+      "tier": "VSL Funnel",
+      "low": 5000,
+      "high": 10000,
+      "niche": "E-commerce"
+    },
+    {
+      "name": "Gabriel Corrieri",
+      "ig": "Rockermkt",
+      "tier": "Consulting",
+      "low": 8000,
+      "high": 8000,
+      "niche": "Marketing/Agencia"
+    },
+    {
+      "name": "Aleksandro Tavluy",
+      "ig": "@theeexal04",
+      "tier": "Consultoria",
+      "low": 3000,
+      "high": 8000,
+      "niche": "Contenido YouTube"
+    },
+    {
+      "name": "Santiago Ortiz Valero",
+      "ig": "Santiagoortizmarketing",
+      "tier": "Consulting",
+      "low": 5000,
+      "high": 5000,
+      "niche": "Marketing/Agencia"
+    },
+    {
+      "name": "Francisco Gonzalez Vattuone",
+      "ig": "Fran.vattuone",
+      "tier": "Consultoria",
+      "low": 4800,
+      "high": 4800,
+      "niche": "Mentoría ecom"
+    },
+    {
+      "name": "Leo Opazo",
+      "ig": "leopazo",
+      "tier": "Mastermind",
+      "low": 3000,
+      "high": 5000,
+      "niche": "No especificado"
+    },
+    {
+      "name": "Piero Arias",
+      "ig": "Piero.trades",
+      "tier": "Consultoria",
+      "low": 3000,
+      "high": 5000,
+      "niche": "Trading"
+    },
+    {
+      "name": "Manuel Castillo",
+      "ig": "@manuelcastillo.ceo",
+      "tier": "Consultoria",
+      "low": 3000,
+      "high": 5000,
+      "niche": "Negocios online"
+    },
+    {
+      "name": "Ariel Mirra",
+      "ig": "@ariel.mirra",
+      "tier": "Mastermind",
+      "low": 3000,
+      "high": 5000,
+      "niche": "Coaching"
+    },
+    {
+      "name": "Pablo Silber",
+      "ig": "@elclubdeactores",
+      "tier": "Mastermind",
+      "low": 3000,
+      "high": 5000,
+      "niche": "Actores"
+    },
+    {
+      "name": "Mehdi",
+      "ig": "@mehdii.jrr",
+      "tier": "Consultoria",
+      "low": 2500,
+      "high": 2500,
+      "niche": "Growth partner"
+    },
+    {
+      "name": "Emiliano Villarreal",
+      "ig": "Emivillarreale",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 3000,
+      "niche": "Funnel"
+    },
+    {
+      "name": "Joaquin Rodri",
+      "ig": "Joacoenchina",
+      "tier": "Mastermind",
+      "low": 0,
+      "high": 3000,
+      "niche": "Indefinido"
+    },
+    {
+      "name": "Benja Núñez",
+      "ig": "Benjanunez_",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "IA"
+    },
+    {
+      "name": "Sarah Barroso",
+      "ig": "@cellgenic",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Medicina regenerativa"
+    },
+    {
+      "name": "Mohit Pal Kumari",
+      "ig": "@mohitpalkumari",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Coaching"
+    },
+    {
+      "name": "Ramiro Exodus",
+      "ig": "—",
+      "tier": "Mastermind",
+      "low": 6600,
+      "high": 6600,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Leandro Tejado",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 3500,
+      "high": 3500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Cristian",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Chile",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Stefano",
+      "ig": "—",
+      "tier": "Mastermind",
+      "low": 3000,
+      "high": 3000,
+      "niche": "Rep. Dominicana",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Fernando trader",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Francisco",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "No especificado",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Aitor",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 3800,
+      "high": 3800,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Javier mentalidad",
+      "ig": "—",
+      "tier": "Mastermind",
+      "low": 8500,
+      "high": 8500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Franco Capa",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 4500,
+      "high": 4500,
+      "niche": "EEUU",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Benja",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Nano",
+      "ig": "—",
+      "tier": "Inner Circle",
+      "low": 25000,
+      "high": 25000,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Emanuel",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 2500,
+      "high": 2500,
+      "niche": "Uruguay",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Sebastian x miguel",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 3800,
+      "high": 3800,
+      "niche": "Ecuador",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "tomi ecom",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "eros x fede",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 5500,
+      "high": 5500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "andros",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Flavio Luizaga",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Bolivia",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Leiner Mogollon",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 3000,
+      "high": 3000,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "bernardo",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "EEUU",
+      "closer": "Pretti",
+      "status": "Reagenda"
+    },
+    {
+      "name": "Javi",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Ian Juarez",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 2500,
+      "high": 2500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Reserva"
+    },
+    {
+      "name": "David Ayala",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 5500,
+      "high": 5500,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Reserva"
+    },
+    {
+      "name": "Emmmanuel Silva",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Nacho Ferreira",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 5500,
+      "high": 5500,
+      "niche": "Uruguay",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Francisco Goinzales",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "israel recio",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Juan",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Lucio",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 5500,
+      "high": 5500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Mauro Perta",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "kevin",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "No especificado",
+      "closer": "Pretti",
+      "status": "Canceló el lead"
+    },
+    {
+      "name": "santiago",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "EEUU",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "angel ortiz",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 4500,
+      "high": 4500,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Brandon Ayala",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Perú",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Emiliano Villareal",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "México",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Paula Trading",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Chile",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Alan Pacheco",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Fabricio Efraín",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Carlos",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Ivan Sanchez",
+      "ig": "—",
+      "tier": "Inner Circle",
+      "low": 15000,
+      "high": 15000,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Jeremias Zarate",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Diago Pereyra",
+      "ig": "—",
+      "tier": "Inner Circle",
+      "low": 0,
+      "high": 0,
+      "niche": "Uruguay",
+      "closer": "Pretti",
+      "status": "Reagenda"
+    },
+    {
+      "name": "Myky",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Reagenda"
+    },
+    {
+      "name": "cory",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Ecuador",
+      "closer": "Pretti",
+      "status": "Reagenda"
+    },
+    {
+      "name": "Samir",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Ramiro de lilio",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Leando Soprani",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Perú",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Coti y nico",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Mariano",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Luis ecom",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Perú",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Luis Florez",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Renzo Revuelta",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Joaquin Pugliese",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Joaquin Yerovik",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "No show"
+    },
+    {
+      "name": "Diego Constant",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 4500,
+      "high": 4500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Reserva"
+    },
+    {
+      "name": "Gabriel Ignacio Corrieri",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Vero Chacon",
+      "ig": "—",
+      "tier": "Mastermind",
+      "low": 12000,
+      "high": 12000,
+      "niche": "Costa Rica",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Agustín",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Marian Mesaddi",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Samar",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "No especificado",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Nacho 110",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Valen Rossi",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Canceló el lead"
+    },
+    {
+      "name": "Paolo",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Chile",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "francisco Mateucci",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 7500,
+      "high": 7500,
+      "niche": "Argentina",
+      "closer": "Pretti",
+      "status": "Pagado"
+    },
+    {
+      "name": "Pablo",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Pretti",
+      "status": "Asistió"
+    },
+    {
+      "name": "Miguel Gaitan",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "No especificado",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Mateo Lezama",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 3800,
+      "high": 3800,
+      "niche": "Argentina",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Felipe U.",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 4250,
+      "high": 4250,
+      "niche": "Costa Rica",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Jose Brother",
+      "ig": "—",
+      "tier": "Mastermind",
+      "low": 3500,
+      "high": 3500,
+      "niche": "Argentina",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Nacho Esperanza",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 5500,
+      "high": 5500,
+      "niche": "Argentina",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Tomi Lach",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 7500,
+      "high": 7500,
+      "niche": "Argentina",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Ricardo Jimenez",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "EEUU",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Fabricio de la Cruz",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 1000,
+      "high": 1000,
+      "niche": "Perú",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Agus Badt",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 1000,
+      "high": 1000,
+      "niche": "Uruguay",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Franco Urbano",
+      "ig": "—",
+      "tier": "Consulting",
+      "low": 500,
+      "high": 500,
+      "niche": "Argentina",
+      "closer": "Fran",
+      "status": "Pagado"
+    },
+    {
+      "name": "Adrian Garcia",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Kevin Quiles",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Colombia",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Nicolas Chile",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Chile",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Conchi",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Javier Ferrer",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Damian Capitan mkt",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "Uruguay",
+      "closer": "Fran",
+      "status": "Asistió"
+    },
+    {
+      "name": "Xavi Cadane",
+      "ig": "—",
+      "tier": "Consultoria",
+      "low": 0,
+      "high": 0,
+      "niche": "España",
+      "closer": "Fran",
+      "status": "Asistió"
+    }
   ],
   "funnel": [
-    { "mes": "Enero",   "conv_in": 314, "conv_out": 0, "seg": 24, "links": 1,  "agendas": 4,  "asist": 3,  "pct_asist": 0.75,   "no_show": 1, "pct_no_show": 0.25,   "reservas": 0, "ventas": 2 },
-    { "mes": "Febrero", "conv_in": 222, "conv_out": 4, "seg": 14, "links": 22, "agendas": 34, "asist": 29, "pct_asist": 0.8529, "no_show": 3, "pct_no_show": 0.0882, "reservas": 2, "ventas": 14 },
-    { "mes": "Marzo",   "conv_in": 0,   "conv_out": 0, "seg": 0,  "links": 0,  "agendas": 28, "asist": 20, "pct_asist": 0.7143, "no_show": 4, "pct_no_show": 0.1429, "reservas": 0, "ventas": 5 },
-    { "mes": "Abril",   "conv_in": 0,   "conv_out": 0, "seg": 0,  "links": 0,  "agendas": 28, "asist": 24, "pct_asist": 0.8571, "no_show": 1, "pct_no_show": 0.0357, "reservas": 1, "ventas": 6 }
+    {
+      "mes": "Enero",
+      "conv_in": 314,
+      "conv_out": 0,
+      "seg": 24,
+      "links": 1,
+      "agendas": 4,
+      "asist": 3,
+      "pct_asist": 0.75,
+      "no_show": 1,
+      "pct_no_show": 0.25,
+      "reservas": 0,
+      "ventas": 2
+    },
+    {
+      "mes": "Febrero",
+      "conv_in": 222,
+      "conv_out": 4,
+      "seg": 14,
+      "links": 22,
+      "agendas": 34,
+      "asist": 29,
+      "pct_asist": 0.8529,
+      "no_show": 3,
+      "pct_no_show": 0.0882,
+      "reservas": 2,
+      "ventas": 14
+    },
+    {
+      "mes": "Marzo",
+      "conv_in": 0,
+      "conv_out": 0,
+      "seg": 0,
+      "links": 0,
+      "agendas": 28,
+      "asist": 20,
+      "pct_asist": 0.7143,
+      "no_show": 4,
+      "pct_no_show": 0.1429,
+      "reservas": 0,
+      "ventas": 5
+    },
+    {
+      "mes": "Abril",
+      "conv_in": 0,
+      "conv_out": 0,
+      "seg": 0,
+      "links": 0,
+      "agendas": 28,
+      "asist": 24,
+      "pct_asist": 0.8571,
+      "no_show": 1,
+      "pct_no_show": 0.0357,
+      "reservas": 1,
+      "ventas": 6
+    }
   ],
   "closers": {
     "Pretti": [
-      { "mes": "Enero",   "agendas": 4,  "asist": 3,  "no_show": 1, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 2 },
-      { "mes": "Febrero", "agendas": 30, "asist": 25, "no_show": 3, "cancel_closer": 0, "cancel_lead": 1, "no_resp_wpp": 0, "reagendas": 1, "reservas": 2, "ventas": 11 },
-      { "mes": "Marzo",   "agendas": 26, "asist": 18, "no_show": 4, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 3, "reservas": 0, "ventas": 3 },
-      { "mes": "Abril",   "agendas": 17, "asist": 13, "no_show": 1, "cancel_closer": 0, "cancel_lead": 2, "no_resp_wpp": 1, "reagendas": 0, "reservas": 1, "ventas": 3 }
+      {
+        "mes": "Enero",
+        "agendas": 4,
+        "asist": 3,
+        "no_show": 1,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 0,
+        "reservas": 0,
+        "ventas": 2
+      },
+      {
+        "mes": "Febrero",
+        "agendas": 30,
+        "asist": 25,
+        "no_show": 3,
+        "cancel_closer": 0,
+        "cancel_lead": 1,
+        "no_resp_wpp": 0,
+        "reagendas": 1,
+        "reservas": 2,
+        "ventas": 11
+      },
+      {
+        "mes": "Marzo",
+        "agendas": 26,
+        "asist": 18,
+        "no_show": 4,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 3,
+        "reservas": 0,
+        "ventas": 3
+      },
+      {
+        "mes": "Abril",
+        "agendas": 17,
+        "asist": 13,
+        "no_show": 1,
+        "cancel_closer": 0,
+        "cancel_lead": 2,
+        "no_resp_wpp": 1,
+        "reagendas": 0,
+        "reservas": 1,
+        "ventas": 3
+      }
     ],
     "Fran": [
-      { "mes": "Enero",   "agendas": 0,  "asist": 0,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 0 },
-      { "mes": "Febrero", "agendas": 4,  "asist": 4,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 3 },
-      { "mes": "Marzo",   "agendas": 2,  "asist": 2,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 2 },
-      { "mes": "Abril",   "agendas": 11, "asist": 11, "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 3 }
+      {
+        "mes": "Enero",
+        "agendas": 0,
+        "asist": 0,
+        "no_show": 0,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 0,
+        "reservas": 0,
+        "ventas": 0
+      },
+      {
+        "mes": "Febrero",
+        "agendas": 4,
+        "asist": 4,
+        "no_show": 0,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 0,
+        "reservas": 0,
+        "ventas": 3
+      },
+      {
+        "mes": "Marzo",
+        "agendas": 2,
+        "asist": 2,
+        "no_show": 0,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 0,
+        "reservas": 0,
+        "ventas": 2
+      },
+      {
+        "mes": "Abril",
+        "agendas": 11,
+        "asist": 11,
+        "no_show": 0,
+        "cancel_closer": 0,
+        "cancel_lead": 0,
+        "no_resp_wpp": 0,
+        "reagendas": 0,
+        "reservas": 0,
+        "ventas": 3
+      }
     ]
   },
   "ventas_pais": [
-    { "mes": "Enero",   "Argentina": 2, "Uruguay": 0, "España": 0, "Chile": 0, "Colombia": 0, "EEUU": 0, "México": 0, "Perú": 0 },
-    { "mes": "Febrero", "Argentina": 6, "Uruguay": 2, "España": 1, "Chile": 0, "Colombia": 1, "EEUU": 1, "México": 0, "Perú": 0 },
-    { "mes": "Marzo",   "Argentina": 2, "Uruguay": 0, "España": 2, "Chile": 0, "Colombia": 0, "EEUU": 1, "México": 0, "Perú": 0 },
-    { "mes": "Abril",   "Argentina": 2, "Uruguay": 1, "España": 0, "Chile": 0, "Colombia": 0, "EEUU": 1, "México": 0, "Perú": 1 }
+    {
+      "mes": "Enero",
+      "Argentina": 2,
+      "Uruguay": 0,
+      "España": 0,
+      "Chile": 0,
+      "Colombia": 0,
+      "EEUU": 0,
+      "México": 0,
+      "Perú": 0
+    },
+    {
+      "mes": "Febrero",
+      "Argentina": 6,
+      "Uruguay": 2,
+      "España": 1,
+      "Chile": 0,
+      "Colombia": 1,
+      "EEUU": 1,
+      "México": 0,
+      "Perú": 0
+    },
+    {
+      "mes": "Marzo",
+      "Argentina": 2,
+      "Uruguay": 0,
+      "España": 2,
+      "Chile": 0,
+      "Colombia": 0,
+      "EEUU": 1,
+      "México": 0,
+      "Perú": 0
+    },
+    {
+      "mes": "Abril",
+      "Argentina": 2,
+      "Uruguay": 1,
+      "España": 0,
+      "Chile": 0,
+      "Colombia": 0,
+      "EEUU": 1,
+      "México": 0,
+      "Perú": 1
+    }
   ],
   "revenue_total": [
-    { "mes": "Enero",   "grupal": 0,    "uno_a_uno": 3500,  "mastermind": 6600,  "inner_circle": 0,     "total": 10100 },
-    { "mes": "Febrero", "grupal": 8000, "uno_a_uno": 42150, "mastermind": 15000, "inner_circle": 25000, "total": 90150 },
-    { "mes": "Marzo",   "grupal": 0,    "uno_a_uno": 17500, "mastermind": 8500,  "inner_circle": 15000, "total": 41000 },
-    { "mes": "Abril",   "grupal": 9000, "uno_a_uno": 10000, "mastermind": 12000, "inner_circle": 0,     "total": 31000 }
+    {
+      "mes": "Enero",
+      "grupal": 0,
+      "uno_a_uno": 3500,
+      "mastermind": 6600,
+      "inner_circle": 0,
+      "total": 10100
+    },
+    {
+      "mes": "Febrero",
+      "grupal": 8000,
+      "uno_a_uno": 42150,
+      "mastermind": 15000,
+      "inner_circle": 25000,
+      "total": 90150
+    },
+    {
+      "mes": "Marzo",
+      "grupal": 0,
+      "uno_a_uno": 17500,
+      "mastermind": 8500,
+      "inner_circle": 15000,
+      "total": 41000
+    },
+    {
+      "mes": "Abril",
+      "grupal": 9000,
+      "uno_a_uno": 10000,
+      "mastermind": 12000,
+      "inner_circle": 0,
+      "total": 31000
+    }
   ],
   "revenue_by_closer": {
     "Pretti": [
-      { "mes": "Enero",   "total": 10100 },
-      { "mes": "Febrero", "total": 78600 },
-      { "mes": "Marzo",   "total": 28000 },
-      { "mes": "Abril",   "total": 28500 }
+      {
+        "mes": "Enero",
+        "total": 10100
+      },
+      {
+        "mes": "Febrero",
+        "total": 78600
+      },
+      {
+        "mes": "Marzo",
+        "total": 28000
+      },
+      {
+        "mes": "Abril",
+        "total": 28500
+      }
     ],
     "Fran": [
-      { "mes": "Enero",   "total": 0 },
-      { "mes": "Febrero", "total": 11550 },
-      { "mes": "Marzo",   "total": 13000 },
-      { "mes": "Abril",   "total": 2500 }
+      {
+        "mes": "Enero",
+        "total": 0
+      },
+      {
+        "mes": "Febrero",
+        "total": 11550
+      },
+      {
+        "mes": "Marzo",
+        "total": 13000
+      },
+      {
+        "mes": "Abril",
+        "total": 2500
+      }
     ]
   },
   "source": [
-    { "mes": "Enero",   "organico": 284, "anuncios": 30 },
-    { "mes": "Febrero", "organico": 197, "anuncios": 25 }
+    {
+      "mes": "Enero",
+      "organico": 284,
+      "anuncios": 30
+    },
+    {
+      "mes": "Febrero",
+      "organico": 197,
+      "anuncios": 25
+    }
+  ],
+  "clientes": [
+    {
+      "name": "Nano",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Inner Circle",
+      "cash": 5000,
+      "revenue": 25000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Ivan Sanchez",
+      "closer": "Pretti",
+      "mes": "Marzo",
+      "pais": "España",
+      "producto": "Inner Circle",
+      "cash": 5000,
+      "revenue": 15000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Vero Chacon",
+      "closer": "Pretti",
+      "mes": "Abril",
+      "pais": "Costa Rica",
+      "producto": "Mastermind",
+      "cash": 12000,
+      "revenue": 12000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Javier mentalidad",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Mastermind",
+      "cash": 2125,
+      "revenue": 8500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Piero Arias",
+      "closer": "Pretti",
+      "mes": "Marzo",
+      "pais": "EEUU",
+      "producto": "Mastermind",
+      "cash": 500,
+      "revenue": 8500,
+      "status": "Pagado"
+    },
+    {
+      "name": "francisco Mateucci",
+      "closer": "Pretti",
+      "mes": "Abril",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 2500,
+      "revenue": 7500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Tomi Lach",
+      "closer": "Fran",
+      "mes": "Marzo",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 7500,
+      "revenue": 7500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Ramiro Exodus",
+      "closer": "Pretti",
+      "mes": "Enero",
+      "pais": "Argentina",
+      "producto": "Mastermind",
+      "cash": 2200,
+      "revenue": 6600,
+      "status": "Pagado"
+    },
+    {
+      "name": "eros x fede",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 1375,
+      "revenue": 5500,
+      "status": "Pagado"
+    },
+    {
+      "name": "David Ayala",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "España",
+      "producto": "Consulting 1-1",
+      "cash": 100,
+      "revenue": 5500,
+      "status": "Reserva"
+    },
+    {
+      "name": "Nacho Ferreira",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Uruguay",
+      "producto": "Consulting 1-1",
+      "cash": 1833,
+      "revenue": 5500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Lucio",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 1833,
+      "revenue": 5500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Nacho Esperanza",
+      "closer": "Fran",
+      "mes": "Marzo",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 5500,
+      "revenue": 5500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Franco Capa",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "EEUU",
+      "producto": "Consulting 1-1",
+      "cash": 1500,
+      "revenue": 4500,
+      "status": "Pagado"
+    },
+    {
+      "name": "angel ortiz",
+      "closer": "Pretti",
+      "mes": "Marzo",
+      "pais": "España",
+      "producto": "Consulting 1-1",
+      "cash": 4500,
+      "revenue": 4500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Diego Constant",
+      "closer": "Pretti",
+      "mes": "Abril",
+      "pais": "Argentina",
+      "producto": "Consulting Grupal",
+      "cash": 50,
+      "revenue": 4500,
+      "status": "Reserva"
+    },
+    {
+      "name": "Mariano",
+      "closer": "Pretti",
+      "mes": "Abril",
+      "pais": "EEUU",
+      "producto": "Consulting Grupal",
+      "cash": 4500,
+      "revenue": 4500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Felipe U.",
+      "closer": "Fran",
+      "mes": "Febrero",
+      "pais": "Costa Rica",
+      "producto": "Consulting 1-1",
+      "cash": 100,
+      "revenue": 4250,
+      "status": "Pagado"
+    },
+    {
+      "name": "Aitor",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "España",
+      "producto": "Consulting 1-1",
+      "cash": 3800,
+      "revenue": 3800,
+      "status": "Pagado"
+    },
+    {
+      "name": "Sebastian x miguel",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Ecuador",
+      "producto": "Consulting 1-1",
+      "cash": 3800,
+      "revenue": 3800,
+      "status": "Pagado"
+    },
+    {
+      "name": "Mateo Lezama",
+      "closer": "Fran",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 3800,
+      "revenue": 3800,
+      "status": "Pagado"
+    },
+    {
+      "name": "Leandro Tejado",
+      "closer": "Pretti",
+      "mes": "Enero",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 1000,
+      "revenue": 3500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Jose Brother",
+      "closer": "Fran",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Mastermind",
+      "cash": 1750,
+      "revenue": 3500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Stefano",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Rep. Dominicana",
+      "producto": "Mastermind",
+      "cash": 3000,
+      "revenue": 3000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Leiner Mogollon",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Colombia",
+      "producto": "Consulting Grupal",
+      "cash": 1000,
+      "revenue": 3000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Emanuel",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Uruguay",
+      "producto": "Consulting Grupal",
+      "cash": 2500,
+      "revenue": 2500,
+      "status": "Pagado"
+    },
+    {
+      "name": "Ian Juarez",
+      "closer": "Pretti",
+      "mes": "Febrero",
+      "pais": "Argentina",
+      "producto": "Consulting Grupal",
+      "cash": 100,
+      "revenue": 2500,
+      "status": "Reserva"
+    },
+    {
+      "name": "Fabricio de la Cruz",
+      "closer": "Fran",
+      "mes": "Abril",
+      "pais": "Perú",
+      "producto": "Consulting 1-1",
+      "cash": 1000,
+      "revenue": 1000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Agus Badt",
+      "closer": "Fran",
+      "mes": "Abril",
+      "pais": "Uruguay",
+      "producto": "Consulting 1-1",
+      "cash": 1000,
+      "revenue": 1000,
+      "status": "Pagado"
+    },
+    {
+      "name": "Franco Urbano",
+      "closer": "Fran",
+      "mes": "Abril",
+      "pais": "Argentina",
+      "producto": "Consulting 1-1",
+      "cash": 500,
+      "revenue": 500,
+      "status": "Pagado"
+    }
   ]
 }
