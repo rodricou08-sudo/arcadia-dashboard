@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Arcadia · Pipeline Snapshot",
-    "subtitle": "Discovery calls · Últimos 2 meses",
-    "version": "v.01",
-    "period": "Mar–Abr 2026"
+    "title": "Arcadia",
+    "subtitle": "Sales intelligence",
+    "period": "Enero – Abril 2026",
+    "version": "v.03"
   },
   "leads": [
     { "name": "Bernardo Caram", "ig": "Bernardo.caram", "tier": "Consultoria", "low": 65000, "high": 65000, "niche": "Amazon management" },
@@ -44,5 +44,55 @@
     { "name": "Benja Núñez", "ig": "Benjanunez_", "tier": "Consultoria", "low": 0, "high": 0, "niche": "IA" },
     { "name": "Sarah Barroso", "ig": "@cellgenic", "tier": "Consultoria", "low": 0, "high": 0, "niche": "Medicina regenerativa" },
     { "name": "Mohit Pal Kumari", "ig": "@mohitpalkumari", "tier": "Consultoria", "low": 0, "high": 0, "niche": "Coaching" }
+  ],
+  "funnel": [
+    { "mes": "Enero",   "conv_in": 314, "conv_out": 0, "seg": 24, "links": 1,  "agendas": 4,  "asist": 3,  "pct_asist": 0.75,   "no_show": 1, "pct_no_show": 0.25,   "reservas": 0, "ventas": 2 },
+    { "mes": "Febrero", "conv_in": 222, "conv_out": 4, "seg": 14, "links": 22, "agendas": 34, "asist": 29, "pct_asist": 0.8529, "no_show": 3, "pct_no_show": 0.0882, "reservas": 2, "ventas": 14 },
+    { "mes": "Marzo",   "conv_in": 0,   "conv_out": 0, "seg": 0,  "links": 0,  "agendas": 28, "asist": 20, "pct_asist": 0.7143, "no_show": 4, "pct_no_show": 0.1429, "reservas": 0, "ventas": 5 },
+    { "mes": "Abril",   "conv_in": 0,   "conv_out": 0, "seg": 0,  "links": 0,  "agendas": 28, "asist": 24, "pct_asist": 0.8571, "no_show": 1, "pct_no_show": 0.0357, "reservas": 1, "ventas": 6 }
+  ],
+  "closers": {
+    "Pretti": [
+      { "mes": "Enero",   "agendas": 4,  "asist": 3,  "no_show": 1, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 2 },
+      { "mes": "Febrero", "agendas": 30, "asist": 25, "no_show": 3, "cancel_closer": 0, "cancel_lead": 1, "no_resp_wpp": 0, "reagendas": 1, "reservas": 2, "ventas": 11 },
+      { "mes": "Marzo",   "agendas": 26, "asist": 18, "no_show": 4, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 3, "reservas": 0, "ventas": 3 },
+      { "mes": "Abril",   "agendas": 17, "asist": 13, "no_show": 1, "cancel_closer": 0, "cancel_lead": 2, "no_resp_wpp": 1, "reagendas": 0, "reservas": 1, "ventas": 3 }
+    ],
+    "Fran": [
+      { "mes": "Enero",   "agendas": 0,  "asist": 0,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 0 },
+      { "mes": "Febrero", "agendas": 4,  "asist": 4,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 3 },
+      { "mes": "Marzo",   "agendas": 2,  "asist": 2,  "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 2 },
+      { "mes": "Abril",   "agendas": 11, "asist": 11, "no_show": 0, "cancel_closer": 0, "cancel_lead": 0, "no_resp_wpp": 0, "reagendas": 0, "reservas": 0, "ventas": 3 }
+    ]
+  },
+  "ventas_pais": [
+    { "mes": "Enero",   "Argentina": 2, "Uruguay": 0, "España": 0, "Chile": 0, "Colombia": 0, "EEUU": 0, "México": 0, "Perú": 0 },
+    { "mes": "Febrero", "Argentina": 6, "Uruguay": 2, "España": 1, "Chile": 0, "Colombia": 1, "EEUU": 1, "México": 0, "Perú": 0 },
+    { "mes": "Marzo",   "Argentina": 2, "Uruguay": 0, "España": 2, "Chile": 0, "Colombia": 0, "EEUU": 1, "México": 0, "Perú": 0 },
+    { "mes": "Abril",   "Argentina": 2, "Uruguay": 1, "España": 0, "Chile": 0, "Colombia": 0, "EEUU": 1, "México": 0, "Perú": 1 }
+  ],
+  "revenue_total": [
+    { "mes": "Enero",   "grupal": 0,    "uno_a_uno": 3500,  "mastermind": 6600,  "inner_circle": 0,     "total": 10100 },
+    { "mes": "Febrero", "grupal": 8000, "uno_a_uno": 42150, "mastermind": 15000, "inner_circle": 25000, "total": 90150 },
+    { "mes": "Marzo",   "grupal": 0,    "uno_a_uno": 17500, "mastermind": 8500,  "inner_circle": 15000, "total": 41000 },
+    { "mes": "Abril",   "grupal": 9000, "uno_a_uno": 10000, "mastermind": 12000, "inner_circle": 0,     "total": 31000 }
+  ],
+  "revenue_by_closer": {
+    "Pretti": [
+      { "mes": "Enero",   "total": 10100 },
+      { "mes": "Febrero", "total": 78600 },
+      { "mes": "Marzo",   "total": 28000 },
+      { "mes": "Abril",   "total": 28500 }
+    ],
+    "Fran": [
+      { "mes": "Enero",   "total": 0 },
+      { "mes": "Febrero", "total": 11550 },
+      { "mes": "Marzo",   "total": 13000 },
+      { "mes": "Abril",   "total": 2500 }
+    ]
+  },
+  "source": [
+    { "mes": "Enero",   "organico": 284, "anuncios": 30 },
+    { "mes": "Febrero", "organico": 197, "anuncios": 25 }
   ]
 }
