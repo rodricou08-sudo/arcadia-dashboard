@@ -1334,7 +1334,9 @@
       "uno_a_uno": 3500,
       "mastermind": 6600,
       "inner_circle": 0,
-      "total": 10100
+      "total": 10100,
+      "cash_collected": 6650,
+      "revenue": 10100
     },
     {
       "mes": "Febrero",
@@ -1342,7 +1344,9 @@
       "uno_a_uno": 42150,
       "mastermind": 15000,
       "inner_circle": 25000,
-      "total": 90150
+      "total": 90150,
+      "cash_collected": 37816,
+      "revenue": 90150
     },
     {
       "mes": "Marzo",
@@ -1350,7 +1354,9 @@
       "uno_a_uno": 17500,
       "mastermind": 8500,
       "inner_circle": 15000,
-      "total": 41000
+      "total": 41000,
+      "cash_collected": 38566,
+      "revenue": 41000
     },
     {
       "mes": "Abril",
@@ -1358,7 +1364,9 @@
       "uno_a_uno": 10000,
       "mastermind": 12000,
       "inner_circle": 0,
-      "total": 31000
+      "total": 31000,
+      "cash_collected": 22825,
+      "revenue": 31000
     }
   ],
   "revenue_by_closer": {

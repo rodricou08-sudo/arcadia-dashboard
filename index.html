@@ -728,8 +728,15 @@
     <section class="row row-3-2">
       <div class="panel">
         <div class="panel-header">
-          <div class="panel-title">Cash collected · trayectoria mensual</div>
-          <div class="panel-meta" id="revenue-meta">USD</div>
+          <div class="panel-title" id="revenue-chart-title">Revenue · trayectoria mensual</div>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <div class="panel-meta" id="revenue-meta">USD</div>
+            <div class="ranking-controls" id="revenue-toggle">
+              <button data-series="revenue" class="active">Revenue</button>
+              <button data-series="cash">Cash collected</button>
+              <button data-series="both">Ambos</button>
+            </div>
+          </div>
         </div>
         <div class="revenue-chart-wrap" id="revenue-chart"></div>
       </div>
@@ -874,6 +881,7 @@
   let DATA = null;
   let currentMonth = 'ALL';
   let currentView = 'sales';
+  let currentSeries = 'revenue';
 
   const fmtUSD = (n) => {
     if (n >= 1000) return '$' + (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + 'K';
@@ -928,6 +936,8 @@
   function renderKPIs() {
     const f = sumFunnel(currentMonth);
     const r = sumRevenue(currentMonth);
+    const rows = currentMonth === 'ALL' ? DATA.revenue_total : DATA.revenue_total.filter(d => d.mes === currentMonth);
+    const cashTotal = rows.reduce((a, b) => a + (b.cash_collected || 0), 0);
     const pctAsist = f.agendas > 0 ? f.asist / f.agendas : 0;
     const closeRate = f.asist > 0 ? f.ventas / f.asist : 0;
     const aov = f.ventas > 0 ? r.total / f.ventas : 0;
@@ -946,76 +956,81 @@
       const sign = v > 0 ? '↑' : v < 0 ? '↓' : '→';
       return `<div class="delta ${cls}">${sign} ${(Math.abs(v) * 100).toFixed(0)}% vs mes anterior</div>`;
     };
+    const cashPct = r.total > 0 ? Math.round(cashTotal / r.total * 100) : 0;
     document.getElementById('kpis').innerHTML = `
       <div class="kpi" style="--kpi-accent: #d946ef;">
-        <div class="label">Cash Collected</div>
+        <div class="label">Revenue</div>
         <div class="value">${fmtUSD(r.total)}</div>
         ${deltaHtml(deltaRevenue)}
-        <div class="sublabel">${currentMonth === 'ALL' ? 'YTD' : currentMonth}</div>
+        <div class="sublabel">${currentMonth === 'ALL' ? 'YTD' : currentMonth} · contratado</div>
       </div>
       <div class="kpi" style="--kpi-accent: #22d3ee;">
+        <div class="label">Cash Collected</div>
+        <div class="value">${fmtUSD(cashTotal)}</div>
+        <div class="sublabel">${cashPct}% del revenue</div>
+      </div>
+      <div class="kpi" style="--kpi-accent: #f59e0b;">
         <div class="label">Ventas cerradas</div>
         <div class="value">${f.ventas}</div>
         <div class="sublabel">AOV · ${aov > 0 ? fmtUSD(aov) : '—'}</div>
       </div>
-      <div class="kpi" style="--kpi-accent: #f59e0b;">
+      <div class="kpi" style="--kpi-accent: #10b981;">
         <div class="label">Close rate</div>
         <div class="value">${fmtPct(closeRate)}</div>
-        <div class="sublabel">Ventas / Asistencias</div>
-      </div>
-      <div class="kpi" style="--kpi-accent: #10b981;">
-        <div class="label">Show rate</div>
-        <div class="value">${fmtPct(pctAsist)}</div>
-        <div class="sublabel">Asistencias / Agendas</div>
+        <div class="sublabel">Show · ${fmtPct(pctAsist)}</div>
       </div>
     `;
   }
 
   function renderRevenueChart() {
     const data = DATA.revenue_total;
-    const W = 600, H = 200, P = { top: 20, right: 40, bottom: 30, left: 50 };
+    const W = 600, H = 200, P = { top: 24, right: 40, bottom: 30, left: 50 };
     const innerW = W - P.left - P.right;
     const innerH = H - P.top - P.bottom;
-    const maxVal = Math.max(...data.map(d => d.total));
+    const series = [];
+    if (currentSeries === 'revenue' || currentSeries === 'both')
+      series.push({ key: 'revenue', label: 'Revenue', color: '#d946ef', vals: data.map(d => d.total) });
+    if (currentSeries === 'cash' || currentSeries === 'both')
+      series.push({ key: 'cash', label: 'Cash collected', color: '#22d3ee', vals: data.map(d => d.cash_collected) });
+    const allVals = series.flatMap(s => s.vals);
+    const maxVal = Math.max(...allVals, 1);
     const yScale = v => P.top + innerH - (v / maxVal) * innerH;
     const xScale = i => P.left + (innerW / (data.length - 1)) * i;
-    const pathLine = data.map((d, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)} ${yScale(d.total)}`).join(' ');
-    const pathArea = pathLine + ` L ${xScale(data.length - 1)} ${P.top + innerH} L ${xScale(0)} ${P.top + innerH} Z`;
     const gridLines = [0, 0.25, 0.5, 0.75, 1].map(f => {
       const y = P.top + innerH * f;
       return `<line class="chart-grid-line" x1="${P.left}" y1="${y}" x2="${W - P.right}" y2="${y}" />`;
     }).join('');
     const yLabels = [0, 0.5, 1].map(f => {
       const y = P.top + innerH * f;
-      const val = maxVal * (1 - f);
-      return `<text class="chart-label" x="${P.left - 10}" y="${y + 3}" text-anchor="end">${fmtUSD(val)}</text>`;
+      return `<text class="chart-label" x="${P.left - 10}" y="${y + 3}" text-anchor="end">${fmtUSD(maxVal * (1 - f))}</text>`;
     }).join('');
     const xLabels = data.map((d, i) => `<text class="chart-label" x="${xScale(i)}" y="${H - 8}" text-anchor="middle">${d.mes.slice(0, 3).toUpperCase()}</text>`).join('');
-    const dots = data.map((d, i) => `
-      <circle class="chart-dot" cx="${xScale(i)}" cy="${yScale(d.total)}" r="4" />
-      <text class="chart-value-label" x="${xScale(i)}" y="${yScale(d.total) - 12}" text-anchor="middle">${fmtUSD(d.total)}</text>
-    `).join('');
+    const seriesSvg = series.map(s => {
+      const path = s.vals.map((v, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)} ${yScale(v)}`).join(' ');
+      const area = path + ` L ${xScale(data.length - 1)} ${P.top + innerH} L ${xScale(0)} ${P.top + innerH} Z`;
+      const dots = s.vals.map((v, i) => `<circle cx="${xScale(i)}" cy="${yScale(v)}" r="4" fill="${s.color}" stroke="var(--bg-card)" stroke-width="2.5" />`).join('');
+      const labels = currentSeries !== 'both' ? s.vals.map((v, i) => `<text class="chart-value-label" x="${xScale(i)}" y="${yScale(v) - 12}" text-anchor="middle">${fmtUSD(v)}</text>`).join('') : '';
+      return `
+        <path d="${area}" fill="${s.color}" opacity="0.1" />
+        <path d="${path}" fill="none" stroke="${s.color}" stroke-width="2" />
+        ${dots}${labels}
+      `;
+    }).join('');
+    const legend = currentSeries === 'both' ? series.map(s =>
+      `<span style="display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--text-secondary);font-family:var(--mono);margin-right:14px;"><span style="width:8px;height:8px;border-radius:2px;background:${s.color};"></span>${s.label}</span>`
+    ).join('') : '';
     document.getElementById('revenue-chart').innerHTML = `
+      ${legend ? `<div style="position:absolute;top:-4px;right:0;">${legend}</div>` : ''}
       <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <linearGradient id="revenueGradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#22d3ee" />
-            <stop offset="50%" stop-color="#d946ef" />
-            <stop offset="100%" stop-color="#f59e0b" />
-          </linearGradient>
-          <linearGradient id="revenueAreaGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#d946ef" stop-opacity="0.25" />
-            <stop offset="100%" stop-color="#d946ef" stop-opacity="0" />
-          </linearGradient>
-        </defs>
-        ${gridLines}${yLabels}
-        <path class="chart-area" d="${pathArea}" />
-        <path class="chart-line" d="${pathLine}" />
-        ${dots}${xLabels}
+        ${gridLines}${yLabels}${seriesSvg}${xLabels}
       </svg>
     `;
-    const total = data.reduce((a, b) => a + b.total, 0);
-    document.getElementById('revenue-meta').textContent = `Total · ${fmtUSD(total)}`;
+    const totalRev = data.reduce((a, b) => a + b.total, 0);
+    const totalCash = data.reduce((a, b) => a + b.cash_collected, 0);
+    const titles = { revenue: 'Revenue · trayectoria mensual', cash: 'Cash collected · trayectoria mensual', both: 'Revenue vs Cash collected · trayectoria mensual' };
+    document.getElementById('revenue-chart-title').textContent = titles[currentSeries];
+    const metas = { revenue: `Total · ${fmtUSD(totalRev)}`, cash: `Total · ${fmtUSD(totalCash)}`, both: `Rev ${fmtUSD(totalRev)} · Cash ${fmtUSD(totalCash)}` };
+    document.getElementById('revenue-meta').textContent = metas[currentSeries];
   }
 
   function renderSource() {
@@ -1379,6 +1394,14 @@
         document.querySelectorAll('#view-leads .ranking-controls button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         renderRanking(parseInt(btn.dataset.limit, 10));
+      });
+    });
+    document.querySelectorAll('#revenue-toggle button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#revenue-toggle button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSeries = btn.dataset.series;
+        renderRevenueChart();
       });
     });
     document.querySelectorAll('#clientes-controls button').forEach(btn => {
