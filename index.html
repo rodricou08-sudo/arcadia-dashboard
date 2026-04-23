@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arcadia · Pipeline Snapshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --bg-elevated: #ffffff;
+    --bg-subtle: #f4f4f2;
+    --bg-hover: #eeedea;
+    --text-primary: #0a0a0a;
+    --text-secondary: #6b6b68;
+    --text-tertiary: #9a9a96;
+    --border: rgba(10, 10, 10, 0.08);
+    --border-strong: rgba(10, 10, 10, 0.14);
+    --accent: #0a0a0a;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(10,10,10,0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10,10,10,0.025) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse 100% 70% at 50% 0%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 100% 70% at 50% 0%, black 30%, transparent 80%);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-left .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-left .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+  }
+  .header-left h1 {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .header-left .subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .header-right {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.8;
+  }
+  .header-right .version {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .kpi {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .kpi:hover { border-color: var(--border-strong); }
+  .kpi .label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kpi .label::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--text-tertiary);
+    border-radius: 50%;
+  }
+  .kpi .value {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-feature-settings: 'tnum';
+  }
+  .kpi .value.small { font-size: 22px; }
+  .kpi .sublabel {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 10px;
+    font-family: var(--mono);
+    letter-spacing: 0.02em;
+  }
+
+  .row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .panel {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .panel-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .panel-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+
+  .bar-row { margin-bottom: 14px; }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .bar-label-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+  .bar-value {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .bar-track {
+    height: 6px;
+    background: var(--bg-subtle);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bucket-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .bucket-row:last-child { margin-bottom: 0; }
+  .bucket-label {
+    width: 90px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+  .bucket-bar {
+    flex: 1;
+    height: 18px;
+    background: var(--bg-subtle);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bucket-fill {
+    height: 100%;
+    background: var(--accent);
+    opacity: 0.88;
+    border-radius: 3px;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bucket-count {
+    width: 28px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .ranking-panel { margin-bottom: 24px; }
+  .ranking-controls {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-subtle);
+    padding: 3px;
+    border-radius: var(--radius-sm);
+  }
+  .ranking-controls button {
+    background: transparent;
+    border: none;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: var(--sans);
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+  .ranking-controls button:hover { color: var(--text-primary); }
+  .ranking-controls button.active {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  .rank-header {
+    display: grid;
+    grid-template-columns: 28px 1fr 110px 90px 140px;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+  }
+  .rank-header span:nth-child(4) { text-align: right; }
+
+  .rank-row {
+    display: grid;
+    grid-template-columns: 28px 1fr 110px 90px 140px;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    transition: background 0.15s;
+  }
+  .rank-row:hover { background: var(--bg-subtle); margin: 0 -12px; padding: 12px; border-radius: var(--radius-sm); border-bottom-color: transparent; }
+  .rank-row:last-child { border-bottom: none; }
+  .rank-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+  .rank-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .rank-niche {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+  }
+  .rank-tier {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-subtle);
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 500;
+    justify-self: start;
+  }
+  .rank-rev {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-align: right;
+    font-weight: 500;
+    font-feature-settings: 'tnum';
+  }
+  .rank-bar {
+    height: 5px;
+    background: var(--bg-subtle);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .rank-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .niche-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .niche-cell {
+    background: var(--bg-subtle);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    transition: background 0.15s;
+  }
+  .niche-cell:hover { background: var(--bg-hover); }
+  .niche-label {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    font-family: var(--mono);
+  }
+  .niche-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .niche-count {
+    font-size: 20px;
+    font-weight: 500;
+    font-feature-settings: 'tnum';
+  }
+  .niche-pct {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-family: var(--mono);
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    color: var(--text-tertiary);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .container { padding: 32px 20px 60px; }
+    .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .header-right { text-align: left; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .row-2 { grid-template-columns: 1fr; }
+    .niche-grid { grid-template-columns: repeat(2, 1fr); }
+    .rank-header, .rank-row { grid-template-columns: 24px 1fr 80px 70px; }
+    .rank-header span:nth-child(5), .rank-row > div:nth-child(5) { display: none; }
+    .header-left h1 { font-size: 26px; }
+  }
+  @media (max-width: 500px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .rank-header, .rank-row { grid-template-columns: 20px 1fr 70px; }
+    .rank-header span:nth-child(3), .rank-row > div:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="container">
+
+  <header class="header">
+    <div class="header-left">
+      <div class="eyebrow" id="eyebrow">Arcadia · Discovery calls</div>
+      <h1 id="title">Pipeline snapshot</h1>
+      <div class="subtitle" id="subtitle">Últimos 2 meses</div>
+    </div>
+    <div class="header-right">
+      <div class="version" id="version">v.01</div>
+      <div id="period">Mar–Abr 2026</div>
+    </div>
+  </header>
+
+  <section class="kpi-grid" id="kpis">
+    <div class="loading">Cargando…</div>
+  </section>
+
+  <section class="row-2">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Por tipo de llamada</div>
+        <div class="panel-meta" id="tier-meta"></div>
+      </div>
+      <div id="tier-bars"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">Distribución de facturación</div>
+        <div class="panel-meta">USD / mes</div>
+      </div>
+      <div id="bucket-bars"></div>
+    </div>
+  </section>
+
+  <section class="panel ranking-panel">
+    <div class="panel-header">
+      <div class="panel-title">Ranking por facturación</div>
+      <div class="ranking-controls">
+        <button data-limit="10" class="active">Top 10</button>
+        <button data-limit="20">Top 20</button>
+        <button data-limit="999">Todos</button>
+      </div>
+    </div>
+    <div class="rank-header">
+      <span>#</span>
+      <span>Lead</span>
+      <span>Tipo</span>
+      <span>MRR</span>
+      <span></span>
+    </div>
+    <div id="ranking"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Concentración por nicho</div>
+      <div class="panel-meta">n = <span id="niche-total"></span></div>
+    </div>
+    <div class="niche-grid" id="niche-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <span>Arcadia Pipeline Dashboard</span>
+    <span id="timestamp"></span>
+  </footer>
+
+</div>
+
+<script>
+  const TIER_COLORS = {
+    'Mastermind': '#7F77DD',
+    'Consultoria': '#1D9E75',
+    'Consulting': '#378ADD',
+    'VSL Funnel': '#D85A30'
+  };
+
+  const mid = (d) => (d.low + d.high) / 2;
+  const fmtCompact = (n) => {
+    if (n >= 1000) return '$' + (n / 1000).toFixed(n % 1000 === 0 ? 0 : 1) + 'K';
+    return '$' + Math.round(n);
+  };
+
+  function categorizeNiche(niche) {
+    const n = niche.toLowerCase();
+    if (n.includes('trading')) return 'Trading';
+    if (n.includes('marketing') || n.includes('agencia')) return 'Marketing';
+    if (n.includes('ecom') || n.includes('amazon') || n.includes('motos') || n.includes('vino')) return 'E-commerce';
+    if (n.includes('coach') || n.includes('espiritualidad') || n.includes('desarrollo')) return 'Coaching';
+    if (n.includes('consult') || n.includes('growth') || n.includes('infoprod') || n.includes('escalad') || n.includes('partner')) return 'Consultoría';
+    if (n.includes('ia') || n.includes(' ai ')) return 'IA';
+    if (n.includes('medicina') || n.includes('psiqu') || n.includes('odont') || n.includes('nutri') || n.includes('salud')) return 'Salud';
+    return 'Otros';
+  }
+
+  async function loadData() {
+    try {
+      const res = await fetch('data.json');
+      if (!res.ok) throw new Error('No se pudo cargar data.json');
+      return await res.json();
+    } catch (err) {
+      document.getElementById('kpis').innerHTML = `<div class="loading">Error: ${err.message}</div>`;
+      throw err;
+    }
+  }
+
+  function renderHeader(meta) {
+    if (meta.title) document.getElementById('title').textContent = meta.title.split('·').pop().trim() || 'Pipeline snapshot';
+    if (meta.subtitle) document.getElementById('subtitle').textContent = meta.subtitle;
+    if (meta.version) document.getElementById('version').textContent = meta.version;
+    if (meta.period) document.getElementById('period').textContent = meta.period;
+  }
+
+  function renderKPIs(leads) {
+    const total = leads.length;
+    const totalLow = leads.reduce((s, d) => s + d.low, 0);
+    const totalHigh = leads.reduce((s, d) => s + d.high, 0);
+    const totalMid = leads.reduce((s, d) => s + mid(d), 0);
+    const avg = totalMid / total;
+
+    document.getElementById('kpis').innerHTML = `
+      <div class="kpi">
+        <div class="label">Leads totales</div>
+        <div class="value">${total}</div>
+        <div class="sublabel">llamadas agendadas</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Facturación combinada</div>
+        <div class="value">${fmtCompact(totalMid)}</div>
+        <div class="sublabel">mensual · punto medio</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Rango total</div>
+        <div class="value small">${fmtCompact(totalLow)} – ${fmtCompact(totalHigh)}</div>
+        <div class="sublabel">min – máx estimado</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Ticket promedio</div>
+        <div class="value">${fmtCompact(avg)}</div>
+        <div class="sublabel">MRR por lead</div>
+      </div>
+    `;
+  }
+
+  function renderTiers(leads) {
+    const counts = {};
+    leads.forEach(d => counts[d.tier] = (counts[d.tier] || 0) + 1);
+    const max = Math.max(...Object.values(counts));
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+    document.getElementById('tier-meta').textContent = `n = ${leads.length}`;
+    document.getElementById('tier-bars').innerHTML = sorted.map(([tier, count]) => {
+      const pct = Math.round((count / leads.length) * 100);
+      const width = Math.round((count / max) * 100);
+      const color = TIER_COLORS[tier] || '#888';
+      return `
+        <div class="bar-row">
+          <div class="bar-label">
+            <span class="bar-label-left">
+              <span class="bar-dot" style="background: ${color};"></span>
+              ${tier}
+            </span>
+            <span class="bar-value">${count} · ${pct}%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: ${width}%; background: ${color};"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderBuckets(leads) {
+    const buckets = [
+      { label: '< $3K',      min: 0,     max: 3000,     count: 0 },
+      { label: '$3K – $5K',  min: 3000,  max: 5000,     count: 0 },
+      { label: '$5K – $10K', min: 5000,  max: 10000,    count: 0 },
+      { label: '$10K – $25K',min: 10000, max: 25000,    count: 0 },
+      { label: '$25K – $50K',min: 25000, max: 50000,    count: 0 },
+      { label: '$50K+',      min: 50000, max: Infinity, count: 0 }
+    ];
+    leads.forEach(d => {
+      const m = mid(d);
+      const b = buckets.find(b => m >= b.min && m < b.max);
+      if (b) b.count++;
+    });
+    const max = Math.max(...buckets.map(b => b.count));
+
+    document.getElementById('bucket-bars').innerHTML = buckets.map(b => {
+      const width = max > 0 ? Math.round((b.count / max) * 100) : 0;
+      return `
+        <div class="bucket-row">
+          <span class="bucket-label">${b.label}</span>
+          <div class="bucket-bar">
+            <div class="bucket-fill" style="width: ${width}%;"></div>
+          </div>
+          <span class="bucket-count">${b.count}</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderRanking(leads, limit) {
+    const sorted = [...leads].sort((a, b) => mid(b) - mid(a));
+    const max = Math.max(...sorted.map(mid));
+    const rows = sorted.slice(0, limit);
+
+    document.getElementById('ranking').innerHTML = rows.map((d, i) => {
+      const m = mid(d);
+      const width = max > 0 ? Math.round((m / max) * 100) : 0;
+      const color = TIER_COLORS[d.tier] || '#888';
+      const revText = m === 0 ? '—' : fmtCompact(m);
+      return `
+        <div class="rank-row">
+          <span class="rank-num">${String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <div class="rank-name">${d.name}</div>
+            <div class="rank-niche">${d.niche}</div>
+          </div>
+          <span class="rank-tier">${d.tier}</span>
+          <span class="rank-rev">${revText}</span>
+          <div class="rank-bar">
+            <div class="rank-bar-fill" style="width: ${width}%; background: ${color};"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderNiches(leads) {
+    const cats = {};
+    leads.forEach(d => {
+      const cat = categorizeNiche(d.niche);
+      cats[cat] = (cats[cat] || 0) + 1;
+    });
+    const sorted = Object.entries(cats).sort((a, b) => b[1] - a[1]);
+
+    document.getElementById('niche-total').textContent = leads.length;
+    document.getElementById('niche-grid').innerHTML = sorted.map(([cat, count]) => {
+      const pct = Math.round((count / leads.length) * 100);
+      return `
+        <div class="niche-cell">
+          <div class="niche-label">${cat}</div>
+          <div class="niche-value-row">
+            <span class="niche-count">${count}</span>
+            <span class="niche-pct">${pct}%</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function bindRankingControls(leads) {
+    document.querySelectorAll('.ranking-controls button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ranking-controls button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const limit = parseInt(btn.dataset.limit, 10);
+        renderRanking(leads, limit);
+      });
+    });
+  }
+
+  function renderTimestamp() {
+    const now = new Date();
+    const d = now.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' });
+    document.getElementById('timestamp').textContent = `Actualizado · ${d}`;
+  }
+
+  (async function init() {
+    const data = await loadData();
+    renderHeader(data.meta || {});
+    renderKPIs(data.leads);
+    renderTiers(data.leads);
+    renderBuckets(data.leads);
+    renderRanking(data.leads, 10);
+    renderNiches(data.leads);
+    bindRankingControls(data.leads);
+    renderTimestamp();
+  })();
+</script>
+
+</body>
+</html>
